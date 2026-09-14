@@ -1,0 +1,18 @@
+# Netlify 配置：静态站点 + Serverless 函数
+# 前端代码里用的是 /api/auth/login 和 /api/auth/callback，
+# 这里把它们重定向到 netlify/functions 下的对应函数，路径无需改前端。
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# 保持前端调用路径不变（/api/auth/xxx → 函数）
+[[redirects]]
+  from = "/api/auth/login"
+  to = "/.netlify/functions/login"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/callback"
+  to = "/.netlify/functions/callback"
+  status = 200
