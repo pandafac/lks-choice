@@ -1,0 +1,16 @@
+# 环境变量与密钥（绝对不能上传）
+.env
+.env.local
+.env.*.local
+
+# 依赖与构建
+node_modules/
+.vercel/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.log
+
+# 本项目的大素材压缩包（可选：如不想上传素材可解开注释）
+# *.zip
